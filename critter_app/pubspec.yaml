@@ -12,6 +12,7 @@ dependencies:
   http: ^1.2.0
   provider: ^6.1.0
   shared_preferences: ^2.2.2
+  audioplayers: ^5.2.0
 
 dev_dependencies:
   flutter_test:
@@ -19,3 +20,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/audio/startup.mp3
+    - assets/images/loading_screen.png
+
+
