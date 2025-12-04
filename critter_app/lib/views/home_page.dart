@@ -34,9 +34,20 @@ class HomePage extends StatelessWidget {
               ? Center(child: Text(vm.error!))
               : Column(
                 children: [
-                  Text("Time: ${DateFormat.jm().format(DateTime(2025, 1, 1, vm.hour, vm.minute))}"),
-                  Text("Month: ${vm.month}"),
-                  Text("Hemisphere: ${vm.hemisphere}"),
+                  Text(
+                    "Time: ${DateFormat.jm().format(DateTime(2025, 1, 1, vm.hour, vm.minute))}",
+                    style: const TextStyle(fontSize: 20),
+                  ),
+
+                  Text(
+                    "Month: ${DateFormat.MMMM().format(vm.current)}",
+                    style: const TextStyle(fontSize: 18),
+                  ),
+
+                  Text(
+                    "Hemisphere: ${vm.hemisphere}",
+                    style: const TextStyle(fontSize: 18),
+                  ),
                   Expanded(
                     child: ListView.builder(
                       itemCount: vm.critters.length,

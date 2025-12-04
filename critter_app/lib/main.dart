@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'viewmodels/critter_viewmodel.dart';
-import 'views/home_page.dart';      // keep this import — HomePage still exists
+import 'views/home_page.dart';
 import 'views/splash_screen.dart';
 import 'secrets.dart';
 

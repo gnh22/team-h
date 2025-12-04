@@ -15,7 +15,6 @@ class CritterViewModel extends ChangeNotifier {
   String hemisphere = 'northern';
   int hour = DateTime.now().hour;
   int minute = DateTime.now().minute;
-  int month = DateTime.now().month;
 
   List<Critter> allCritters = [];
   List<Critter> critters = [];
@@ -26,17 +25,15 @@ class CritterViewModel extends ChangeNotifier {
   // CLOCK FUNCTIONALITY
   // ------------------------
   void _startClock() {
-    // Initial update
     _updateTime();
 
-    // Schedule updates at the start of each new minute
     Future.doWhile(() async {
       final now = DateTime.now();
       final waitSeconds = 60 - now.second;
       await Future.delayed(Duration(seconds: waitSeconds));
 
       _updateTime();
-      return true; // continue looping
+      return true;
     });
   }
 
@@ -52,10 +49,7 @@ class CritterViewModel extends ChangeNotifier {
   // ------------------------
   void initNow() async {
     hemisphere = await prefs.loadHemisphere();
-    current = DateTime.now();
-    hour = current.hour;
-    minute = current.minute; // initialize minute
-    month = current.month;
+    _updateTime(); // sets current, hour, minute
     await fetchAll();
   }
 
@@ -85,7 +79,7 @@ class CritterViewModel extends ChangeNotifier {
   // FILTER CRITTERS
   // ------------------------
   void applyFilters() {
-    print("Current month: $month");
+    print("Current month: ${current.month}");
     print("Hemisphere: $hemisphere");
     print("Total critters: ${allCritters.length}");
 
@@ -94,14 +88,12 @@ class CritterViewModel extends ChangeNotifier {
           ? c.monthsNorthern
           : c.monthsSouthern;
 
-      print("${c.name}: months=$months, contains $month? ${months.contains(month)}");
+      print("${c.name}: months=$months, contains ${current.month}? ${months.contains(current.month)}");
 
-      // Check month availability
-      if (months.isNotEmpty && !months.contains(month)) {
+      if (months.isNotEmpty && !months.contains(current.month)) {
         return false;
       }
 
-      // Check time availability
       if (c.time != null && c.time!.isNotEmpty) {
         return _isAvailableAtHour(c.time!, hour);
       }
@@ -114,7 +106,6 @@ class CritterViewModel extends ChangeNotifier {
   }
 
   bool _isAvailableAtHour(String timeRange, int currentHour) {
-    // Handle "All day" case
     if (timeRange.toLowerCase().contains("all day")) {
       return true;
     }
@@ -123,7 +114,7 @@ class CritterViewModel extends ChangeNotifier {
     final regex = RegExp(r'(\d+)\s*(AM|PM)\s*[–-]\s*(\d+)\s*(AM|PM)');
     final match = regex.firstMatch(timeRange);
 
-    if (match == null) return true; // If can't parse, show it
+    if (match == null) return true;
 
     int startHour = int.parse(match.group(1)!);
     String startPeriod = match.group(2)!;
