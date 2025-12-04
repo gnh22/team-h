@@ -16,25 +16,38 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   final AudioController _audioController = AudioController();
 
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _audioController.playBackground();
+  }
+
+  @override
+  void dispose() {
+    _audioController.stop();
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused || state == AppLifecycleState.inactive) {
+      // stop music when app is backgrounded
+      _audioController.stop();
+    } else if (state == AppLifecycleState.resumed) {
+      // resume music when app comes back
+      _audioController.playBackground();
+    }
   }
 
   void _toggleMusic() {
     setState(() {
       _audioController.toggle();
     });
-  }
-
-  @override
-  void dispose() {
-    _audioController.stop();
-    super.dispose();
   }
 
   @override
