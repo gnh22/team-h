@@ -12,9 +12,17 @@ class GlossaryPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: const Text("Glossary")),
-      body: ListView.builder(
-        itemCount: vm.allCritters.length,
-        itemBuilder: (_, i) => CritterTile(critter: vm.allCritters[i]),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/background.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: ListView.builder(
+          itemCount: vm.allCritters.length,
+          itemBuilder: (_, i) => CritterTile(critter: vm.allCritters[i]),
+        ),
       ),
     );
   }

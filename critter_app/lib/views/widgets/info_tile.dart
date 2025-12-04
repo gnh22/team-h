@@ -41,13 +41,13 @@ class InfoTile extends StatelessWidget {
           "$label:",
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 18, // increase label font size
+            fontSize: 18,
           ),
         ),
         Text(
           value,
           style: const TextStyle(
-            fontSize: 18, // increase value font size
+            fontSize: 18,
           ),
         ),
       ],

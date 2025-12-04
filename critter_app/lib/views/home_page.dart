@@ -28,28 +28,34 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
-      body: vm.loading
-          ? const Center(child: CircularProgressIndicator())
-          : vm.error != null
-              ? Center(child: Text(vm.error!))
-              : Column(
-                  children: [
-                    // Info tiles
-                    InfoTile(
-                      time: DateFormat.jm().format(DateTime(2025, 1, 1, vm.hour, vm.minute)),
-                      month: DateFormat.MMMM().format(vm.current),
-                      hemisphere: vm.hemisphere[0].toUpperCase() + vm.hemisphere.substring(1),
-                    ),
-                    // Critter list
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: vm.critters.length,
-                        itemBuilder: (_, i) =>
-                            CritterTile(critter: vm.critters[i]),
-                      ),
-                    ),
-                  ],
-                ),
+      
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/background.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: vm.loading
+            ? const Center(child: CircularProgressIndicator())
+            : vm.error != null
+                ? Center(child: Text(vm.error!))
+                : ListView.builder(
+                    itemCount: vm.critters.length + 1,
+                    itemBuilder: (_, index) {
+                      if (index == 0) {
+                        return InfoTile(
+                          time: DateFormat.jm().format(
+                              DateTime(2025, 1, 1, vm.hour, vm.minute)),
+                          month: DateFormat.MMMM().format(vm.current),
+                          hemisphere: vm.hemisphere[0].toUpperCase() +
+                              vm.hemisphere.substring(1),
+                        );
+                      }
+                      return CritterTile(critter: vm.critters[index - 1]);
+                    },
+                  ),
+      ),
     );
   }
 }
