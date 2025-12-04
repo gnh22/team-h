@@ -24,4 +24,9 @@ flutter:
     - assets/audio/startup.mp3
     - assets/images/loading_screen.png
 
+  fonts:
+  - family: CritterFont
+    fonts:
+      - asset: assets/fonts/FinkHeavy.ttf
+
 

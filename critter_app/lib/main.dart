@@ -18,7 +18,10 @@ class CritterApp extends StatelessWidget {
       create: (_) => CritterViewModel(apiKey: apiKey)..initNow(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: const SplashScreen(),   // ← CHANGE THIS LINE
+        home: const SplashScreen(),
+        theme: ThemeData(
+          fontFamily: 'CritterFont',
+        )
       ),
     );
   }
