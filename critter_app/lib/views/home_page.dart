@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart';
 import '../viewmodels/critter_viewmodel.dart';
 import 'glossary_page.dart';
 import 'widgets/critter_tile.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,19 +33,19 @@ class HomePage extends StatelessWidget {
           : vm.error != null
               ? Center(child: Text(vm.error!))
               : Column(
-                  children: [
-                    Text("Hour:  ${vm.hour}"),
-                    Text("Month: ${vm.month}"),
-                    Text("Hemisphere: ${vm.hemisphere}"),
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: vm.critters.length,
-                        itemBuilder: (_, i) =>
-                            CritterTile(critter: vm.critters[i]),
-                      ),
+                children: [
+                  Text("Time: ${DateFormat.jm().format(DateTime(2025, 1, 1, vm.hour, vm.minute))}"),
+                  Text("Month: ${vm.month}"),
+                  Text("Hemisphere: ${vm.hemisphere}"),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: vm.critters.length,
+                      itemBuilder: (_, i) => CritterTile(critter: vm.critters[i]),
                     ),
-                  ],
-                ),
+                  ),
+                ],
+              )
+
     );
   }
 }
