@@ -109,6 +109,7 @@ class CritterViewModel extends ChangeNotifier {
     if (timeRange.toLowerCase().contains("all day")) {
       return true;
     }
+    
 
     // Parse time ranges like "8 AM – 5 PM" or "9 PM – 4 AM"
     final regex = RegExp(r'(\d+)\s*(AM|PM)\s*[–-]\s*(\d+)\s*(AM|PM)');
@@ -133,5 +134,12 @@ class CritterViewModel extends ChangeNotifier {
     } else {
       return currentHour >= startHour && currentHour < endHour;
     }
+  }
+
+  // ------------------------
+  // HELPER FOR EXTERNAL FILTERING
+  // ------------------------
+  bool applyTimeFilter(String timeRange, int hourToCheck) {
+    return _isAvailableAtHour(timeRange, hourToCheck);
   }
 }

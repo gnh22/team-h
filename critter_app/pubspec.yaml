@@ -25,6 +25,7 @@ flutter:
     - assets/audio/startup.mp3
     - assets/images/loading_screen.png
     - assets/images/background.jpg
+    - assets/audio/background.mp3
 
   fonts:
   - family: CritterFont
