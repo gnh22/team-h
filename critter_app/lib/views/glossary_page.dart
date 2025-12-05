@@ -24,6 +24,7 @@ class _GlossaryPageState extends State<GlossaryPage> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 112, 198, 154).withOpacity(0.5),
         title: const Text("Glossary"),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(55),
