@@ -74,33 +74,6 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
               ),
             )
           : _buildContent(vm),
-            // ? const Center(child: CircularProgressIndicator(
-            //     color: Color(0xFF75e0a9),
-            //   )
-            // )
-            // : vm.error != null
-            //     ? Center(child: Text(vm.error!))
-            //     : RefreshIndicator(
-            //       onRefresh: () async {
-            //         await vm.fetchAll();
-            //       },
-            //       color: const Color(0xFF75e0a9),
-            //       child: ListView.builder(
-            //         itemCount: vm.critters.length + 1,
-            //         itemBuilder: (_, index) {
-            //           if (index == 0) {
-            //             return InfoTile(
-            //               time: DateFormat.jm().format(
-            //                   DateTime(2025, 1, 1, vm.hour, vm.minute)),
-            //               month: DateFormat.MMMM().format(vm.current),
-            //               hemisphere: vm.hemisphere[0].toUpperCase() +
-            //                   vm.hemisphere.substring(1),
-            //             );
-            //           }
-            //           return CritterTile(critter: vm.critters[index - 1]);
-            //         },
-            //       ),
-            //       ),
       ),
       bottomNavigationBar: BottomAppBar(
         color: const Color.fromARGB(255, 112, 198, 154).withOpacity(0.5),
