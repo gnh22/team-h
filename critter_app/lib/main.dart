@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'viewmodels/critter_viewmodel.dart';
+import 'services/api_service.dart';
 import 'views/home_page.dart';
 import 'views/splash_screen.dart';
 import 'secrets.dart';
@@ -15,7 +16,9 @@ class CritterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => CritterViewModel(apiKey: apiKey)..initNow(),
+      create: (_) => CritterViewModel(
+        api: ApiService(token: apiKey)
+      )..initNow(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: const SplashScreen(),
