@@ -74,7 +74,12 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             )
             : vm.error != null
                 ? Center(child: Text(vm.error!))
-                : ListView.builder(
+                : RefreshIndicator(
+                  onRefresh: () async {
+                    await vm.fetchAll();
+                  },
+                  color: const Color(0xFF75e0a9),
+                  child: ListView.builder(
                     itemCount: vm.critters.length + 1,
                     itemBuilder: (_, index) {
                       if (index == 0) {
@@ -88,6 +93,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                       }
                       return CritterTile(critter: vm.critters[index - 1]);
                     },
+                  ),
                   ),
       ),
       bottomNavigationBar: BottomAppBar(
