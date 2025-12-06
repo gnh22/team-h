@@ -8,3 +8,59 @@ Read more [here](https://en.wikipedia.org/wiki/Animal_Crossing:_New_Horizons)
 
 ## About Critter O'Clock
 Since ACHN is variable-dependent (meaning certain bugs and fish only appear during partciular hours, months, weather conditions, hemispheres, etc.) we created an app that allows the user to know which bugs and fish can be caught given their real, current time and month. If the user wants to view all of the bugs and fish available in the ACNH universe, they can navigate to the glossary page. If the user wants to view all of the bugs and fish available given partciular variables, the user can navigate to the filter page and choose their desired variables and filter the critters. On each page the critters have a dropdown view that gives details about its hemisphere, time, location, sell price, and seasonal availability.
+
+### Screenshots of App
+
+<p align="center">
+  <b>Splash Screen</b>
+  <br>
+  <img src="critter_app/screenshots/splash_screen.png" width="300">
+</p>
+
+<p align="center">
+  <b>Home Page</b>
+  <br>
+  <img src="critter_app/screenshots/home_page.png" width="300">
+</p>
+
+<p align="center">
+  <b>Filter Page</b>
+  <br>
+  <img src="critter_app/screenshots/filter_page.png" width="300">
+</p>
+
+<p align="center">
+  <b>Glossary Page</b>
+  <br>
+  <img src="critter_app/screenshots/glossary_page.png" width="300">
+</p>
+
+<p align="center">
+  <b>Dropdown Info</b>
+  <br>
+  <img src="critter_app/screenshots/critter_info.png" width="300">
+</p>
+
+---
+
+## API Used
+To build our app we used the [Nookipedia API](https://api.nookipedia.com/) which pulls data from the Nookipedia wiki page. To gain access we submitted a request for a unique API key.
+
+## MVVM diagram
+A diagram of our MVVM setup is below
+
+## Build Instruction
+In order to run our app, clone this repository onto your local machine. Once cloned, navigate into the folder critter_app and run `flutter pub get` to retreive all dependencies. Open XCode/Simulator on your machine and run `flutter run` to run the iPhone 17 Pro simulator. The app should be launched immediately.
+
+## Dependencies
+The following dependencies were used for the creation of our app:
+### Main Dependencies:
+- flutter — Core Flutter SDK used to build the UI and run the application.
+- http — Makes network requests (e.g., fetching data from APIs).
+- provider — State management library used to handle app-wide data efficiently.
+- shared_preferences — Stores small amounts of persistent data locally on the device (e.g., settings, simple user data).
+- audioplayers — Plays audio files and sound effects in the app.
+- intl — Provides internationalization and formatting utilities (dates, numbers, localization).
+### Development & Testing Dependencies
+- mockito — A popular mocking framework used for writing unit tests.
+- build_runner — Used to generate necessary files for certain packages (e.g., code generation, mocks).
