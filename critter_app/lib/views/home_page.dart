@@ -189,7 +189,7 @@ Widget _buildContent(CritterViewModel vm) {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.white.withOpacity(0.9),
+                color: Colors.black.withOpacity(0.9),
               ),
             ),
             const SizedBox(height: 8),
@@ -198,7 +198,7 @@ Widget _buildContent(CritterViewModel vm) {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 14,
-                color: Colors.white.withOpacity(0.7),
+                color: Colors.black.withOpacity(0.7),
               ),
             ),
             const SizedBox(height: 24),

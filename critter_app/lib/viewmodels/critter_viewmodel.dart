@@ -88,8 +88,6 @@ class CritterViewModel extends ChangeNotifier {
           ? c.monthsNorthern
           : c.monthsSouthern;
 
-      // print("${c.name}: months=$months, contains ${current.month}? ${months.contains(current.month)}");
-
       if (months.isNotEmpty && !months.contains(current.month)) {
         return false;
       }
