@@ -80,7 +80,9 @@ class CritterViewModel extends ChangeNotifier {
   // FILTER CRITTERS
   // ------------------------
   void applyFilters() {
-
+    // critters = [];
+    // notifyListeners();
+    // return;
     critters = allCritters.where((c) {
       final months = hemisphere == "northern"
           ? c.monthsNorthern
