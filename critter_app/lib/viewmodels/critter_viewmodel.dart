@@ -5,12 +5,13 @@ import '../storage/preferences_service.dart';
 
 class CritterViewModel extends ChangeNotifier {
   final ApiService api;
-  final PreferencesService prefs = PreferencesService();
+  final PreferencesService prefs;
 
-  CritterViewModel({String? apiKey}) : api = ApiService(token: apiKey) {
+  CritterViewModel({ApiService? api, PreferencesService? prefs})
+      : api = api ?? ApiService(token: null),
+        prefs = prefs ?? PreferencesService() {
     _startClock();
   }
-
   DateTime current = DateTime.now();
   String hemisphere = 'northern';
   int hour = DateTime.now().hour;
@@ -47,7 +48,7 @@ class CritterViewModel extends ChangeNotifier {
   // ------------------------
   // INITIALIZATION
   // ------------------------
-  void initNow() async {
+  Future<void> initNow() async {
     hemisphere = await prefs.loadHemisphere();
     _updateTime(); // sets current, hour, minute
     await fetchAll();
