@@ -80,16 +80,13 @@ class CritterViewModel extends ChangeNotifier {
   // FILTER CRITTERS
   // ------------------------
   void applyFilters() {
-    print("Current month: ${current.month}");
-    print("Hemisphere: $hemisphere");
-    print("Total critters: ${allCritters.length}");
 
     critters = allCritters.where((c) {
       final months = hemisphere == "northern"
           ? c.monthsNorthern
           : c.monthsSouthern;
 
-      print("${c.name}: months=$months, contains ${current.month}? ${months.contains(current.month)}");
+      // print("${c.name}: months=$months, contains ${current.month}? ${months.contains(current.month)}");
 
       if (months.isNotEmpty && !months.contains(current.month)) {
         return false;
@@ -102,7 +99,7 @@ class CritterViewModel extends ChangeNotifier {
       return true;
     }).toList();
 
-    print("Filtered critters: ${critters.length}");
+    // print("Filtered critters: ${critters.length}");
     notifyListeners();
   }
 

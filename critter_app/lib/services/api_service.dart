@@ -21,13 +21,7 @@ class ApiService {
       throw Exception("Failed to load $type: ${res.statusCode}");
     }
 
-    // Print the raw response to see what we're actually getting
-    print("Raw API response (first item):");
     final List decoded = json.decode(res.body);
-    if (decoded.isNotEmpty) {
-      print(json.encode(decoded.first));
-    }
-
     return decoded.map((c) => Critter.fromJson(c)).toList();
   }
 }
