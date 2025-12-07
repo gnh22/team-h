@@ -48,6 +48,9 @@ To build our app we used the [Nookipedia API](https://api.nookipedia.com/) which
 
 ## MVVM diagram
 A diagram of our MVVM setup is below
+<p align="center">
+  <img src="critter_app/screenshots/MVVM.png">
+</p>
 
 ## Build Instruction
 In order to run our app, clone this repository onto your local machine. Once cloned, navigate into the folder critter_app and run `flutter pub get` to retreive all dependencies. Open XCode/Simulator on your machine and run `flutter run` to run the iPhone 17 Pro simulator. The app should be launched immediately.
