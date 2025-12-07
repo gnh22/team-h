@@ -53,7 +53,7 @@ A diagram of our MVVM setup is below
 </p>
 
 ## Build Instruction
-In order to run our app, clone this repository onto your local machine. Once cloned, navigate into the folder critter_app and run `flutter pub get` to retreive all dependencies. Open XCode/Simulator on your machine and run `flutter run` to run the iPhone 17 Pro simulator. The app should be launched immediately.
+In order to run our app, clone this repository onto your local machine. Once cloned, navigate into the folder critter_app and run `flutter pub get` to retreive all dependencies. Open XCode/Simulator on your machine and run `flutter run` to run the iPhone 17 Pro simulator. The app should be launched immediately, and **please ensure that your machine as well as your simulator has the sound turned up!**
 
 ## Dependencies
 The following dependencies were used for the creation of our app:
