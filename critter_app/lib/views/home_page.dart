@@ -75,7 +75,8 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             )
           : _buildContent(vm),
       ),
-      bottomNavigationBar: BottomAppBar(
+      // Only show bottom navigation bar when there's no error
+      bottomNavigationBar: vm.error == null ? BottomAppBar(
         color: const Color.fromARGB(255, 112, 198, 154).withOpacity(0.5),
         child: SizedBox(
           height: 70,
@@ -137,7 +138,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             ],
           ),
         ),
-      ),
+      ) : null, // Return null when there's an error
     );
   }
 }
