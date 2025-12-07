@@ -67,3 +67,7 @@ The following dependencies were used for the creation of our app:
 ### Development & Testing Dependencies
 - mockito — A popular mocking framework used for writing unit tests.
 - build_runner — Used to generate necessary files for certain packages (e.g., code generation, mocks).
+
+## Features 
+- Animations: When the user clicks the drop down arrow on a Critter card, it seamlessly expands the box to show more information.
+- Gestures: When the user is on the home page and drags down, a loading icon will appear at the top to signify a refresh, and if they release, it will refresh the data. 
