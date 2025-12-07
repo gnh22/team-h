@@ -14,31 +14,31 @@ Since ACHN is variable-dependent (meaning certain bugs and fish only appear duri
 <p align="center">
   <b>Splash Screen</b>
   <br>
-  <img src="critter_app/screenshots/splash_screen.png" width="300">
+  <img src="screenshots/splash_screen.png" width="300">
 </p>
 
 <p align="center">
   <b>Home Page</b>
   <br>
-  <img src="critter_app/screenshots/home_page.png" width="300">
+  <img src="screenshots/home_page.png" width="300">
 </p>
 
 <p align="center">
   <b>Filter Page</b>
   <br>
-  <img src="critter_app/screenshots/filter_page.png" width="300">
+  <img src="screenshots/filter_page.png" width="300">
 </p>
 
 <p align="center">
   <b>Glossary Page</b>
   <br>
-  <img src="critter_app/screenshots/glossary_page.png" width="300">
+  <img src="screenshots/glossary_page.png" width="300">
 </p>
 
 <p align="center">
   <b>Dropdown Info</b>
   <br>
-  <img src="critter_app/screenshots/critter_info.png" width="300">
+  <img src="screenshots/critter_info.png" width="300">
 </p>
 
 ---
@@ -49,7 +49,7 @@ To build our app we used the [Nookipedia API](https://api.nookipedia.com/) which
 ## MVVM diagram
 A diagram of our MVVM setup is below
 <p align="center">
-  <img src="critter_app/screenshots/MVVM.png">
+  <img src="screenshots/MVVM.png">
 </p>
 
 ## Build Instruction
