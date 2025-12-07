@@ -11,36 +11,6 @@ Since ACHN is variable-dependent (meaning certain bugs and fish only appear duri
 
 ### Screenshots of App
 
-<p align="center">
-  <b>Splash Screen</b>
-  <br>
-  <img src="critter_app/screenshots/splash_screen.png" width="300">
-</p>
-
-<p align="center">
-  <b>Home Page</b>
-  <br>
-  <img src="critter_app/screenshots/home_page.png" width="300">
-</p>
-
-<p align="center">
-  <b>Filter Page</b>
-  <br>
-  <img src="critter_app/screenshots/filter_page.png" width="300">
-</p>
-
-<p align="center">
-  <b>Glossary Page</b>
-  <br>
-  <img src="critter_app/screenshots/glossary_page.png" width="300">
-</p>
-
-<p align="center">
-  <b>Dropdown Info</b>
-  <br>
-  <img src="critter_app/screenshots/critter_info.png" width="300">
-</p>
-
 ---
 
 ## API Used
