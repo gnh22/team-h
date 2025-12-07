@@ -76,17 +76,11 @@ class _CritterTileState extends State<CritterTile> {
                         const SizedBox(height: 4),
                         Text("Time: ${critter.time}"),
                       ],
-
-                      //const SizedBox(height: 4),
-                      
-                      // --- NEW: Location ---
                       const SizedBox(height: 4),
                       Text(
                         "Location: ${critter.location}",
                         style: const TextStyle(fontWeight: FontWeight.w500),
                       ),
-
-                      // --- NEW: Sell price ---
                       const SizedBox(height: 4),
                       Text("Sell Price: ${critter.sellNook} bells"),
                       const SizedBox(height: 8),
