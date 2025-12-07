@@ -1,6 +1,5 @@
 # Critter O’Clock
 ### **Team-H: Michelle Hong & Grace Hines**
-### *This is a repeat of our readme in the team-h folder*
 
 ## Animal Crossing: New Horizons
 *Animal Crossing: New Horizons (ACNH)* is a 2020 social simulation game developed and published by Nintendo for the Nintendo Switch. It is the fifth main installment in the Animal Crossing series. In New Horizons, the player controls a character who moves to a deserted island after purchasing a getaway package from Tom Nook, accomplishes assigned tasks, and develops the island as they choose. They can gather and craft items, customize the island, and develop it into a community of anthropomorphic animals. (Wikipedia)
@@ -49,6 +48,9 @@ To build our app we used the [Nookipedia API](https://api.nookipedia.com/) which
 
 ## MVVM diagram
 A diagram of our MVVM setup is below
+<p align="center">
+  <img src="screenshots/MVVM.png">
+</p>
 
 ## Build Instruction
 In order to run our app, clone this repository onto your local machine. Once cloned, navigate into the folder critter_app and run `flutter pub get` to retreive all dependencies. Open XCode/Simulator on your machine and run `flutter run` to run the iPhone 17 Pro simulator. The app should be launched immediately.
